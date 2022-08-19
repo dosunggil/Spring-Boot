@@ -12,33 +12,33 @@
     <div>
         <div>
             <label class="w3-text-blue">isbn</label>
-            <input class="w3-input" name="isbn" placeholder="ISBN">
+            <input class="w3-input" name="isbn" placeholder="ISBN" th:value="${BOOK.isbn}">
         </div>
         <div>
 
 
             <label class="w3-text-blue">도서명</label>
-            <input name="title" placeholder="도서명" class="w3-input">
+            <input name="title" placeholder="도서명" class="w3-input" th:value="${BOOK.title}">
         </div>
         <div>
 
             <label class="w3-text-blue">출판사</label>
-            <input name="company" placeholder="출판사" class="w3-input">
+            <input name="company" placeholder="출판사" class="w3-input" th:value="${BOOK.company}">
         </div>
         <div>
 
             <label class="w3-text-blue">저자</label>
-            <input name="author" placeholder="저자" class="w3-input">
+            <input name="author" placeholder="저자" class="w3-input" th:value="${BOOK.author}">
         </div>
         <div>
 
             <label class="w3-text-blue">출판일자</label>
-            <input name="pub_date" placeholder="출판일자" class="w3-input">
+            <input name="pub_date" placeholder="출판일자" class="w3-input" th:value="${BOOK.pub_date}">
         </div>
         <div>
 
             <label class="w3-text-blue" value="0">가격</label>
-            <input name="price" type="number" class="w3-input">
+            <input name="price" type="number" class="w3-input" th:value="${BOOK.price}">
         </div>
 
     </div>
@@ -82,7 +82,7 @@
             const td = e.target
             const tr = td.closest("TR")
             const isbn = tr.dataset.isbn
-            alert(isbn)
+            document.location.href="/?code="+isbn
         })
         }
     )
