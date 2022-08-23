@@ -1,0 +1,14 @@
+# DBMS
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/bootdb
+    username: dosunggil
+    password: '!Korea8080'
+
+
+  thymeleaf:
+    prefix: classpath:html/
+    suffix: .html
+    mode: HTML5
+    template-resolver-order: 0
