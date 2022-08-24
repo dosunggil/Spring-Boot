@@ -10,11 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @RequestMapping(value="/todo")
 public class TodoController {
 
-    private final TodoService todoService;
 
-    public TodoController(TodoService todoService) {
-        this.todoService = todoService;
-    }
 
 
     @RequestMapping(value="list", method= RequestMethod.GET)

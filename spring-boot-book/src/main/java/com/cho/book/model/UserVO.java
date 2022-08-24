@@ -15,7 +15,8 @@ import java.util.Set;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-@ToString
+//@OneToMany 와 충돌하여 lombok @ToString 사용하지 않는다.
+//@ToString
 @Builder
 @Entity
 @Table(name = "tbl_users")
@@ -77,4 +78,20 @@ public class UserVO implements UserDetails {
      */
     @OneToMany(mappedBy = "userVO", fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
     private Set<UserRole> userRoles;
+
+    @Override
+    public String toString() {
+        return "UserVO{" +
+                "username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                ", enabled=" + enabled +
+                ", accountNonExpired=" + accountNonExpired +
+                ", accountNonLocked=" + accountNonLocked +
+                ", credentialsNonExpired=" + credentialsNonExpired +
+                ", email='" + email + '\'' +
+                ", realname='" + realname + '\'' +
+//                ", authorities=" + authorities +
+//                ", userRoles=" + userRoles +
+                '}';
+    }
 }
